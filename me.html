@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Me — Data Engineer & AI Engineer</title>
+    <meta name="description" content="About me — Data Engineer focused on Data Engineering, DevOps, AI and cloud technologies.">
+
+    <style>
+        :root {
+            --bg: #0a0f1a;
+            --bg-soft: #101827;
+            --card: rgba(18, 27, 43, 0.75);
+            --border: rgba(255, 255, 255, 0.09);
+            --text: #f4f7fb;
+            --muted: #9ba8bb;
+            --accent: #5eead4;
+            --accent-blue: #60a5fa;
+            --accent-purple: #a78bfa;
+            --gradient: linear-gradient(135deg, #5eead4, #60a5fa, #a78bfa);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(circle at 15% 20%, rgba(94, 234, 212, 0.08), transparent 30%),
+                radial-gradient(circle at 85% 10%, rgba(96, 165, 250, 0.10), transparent 30%),
+                var(--bg);
+
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 15, 26, 0.78);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            padding: 100px 0;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 14px var(--accent);
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 86px);
+            line-height: 1.02;
+            letter-spacing: -4px;
+            margin-bottom: 28px;
+        }
+
+        .gradient-text {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            color: var(--muted);
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        .hero-description strong {
+            color: var(--text);
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        .button {
+            padding: 11px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: rgba(255,255,255,0.04);
+            color: var(--text);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            border-color: rgba(94,234,212,0.4);
+            background: rgba(94,234,212,0.08);
+        }
+
+        .button.primary {
+            background: var(--accent);
+            color: #071313;
+            border-color: var(--accent);
+            font-weight: 700;
+        }
+
+        .button.primary:hover {
+            background: #7ef2df;
+        }
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        .about-highlight {
+            padding: 28px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 18px;
+        }
+
+        .about-highlight .quote {
+            font-size: 21px;
+            line-height: 1.5;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .about-highlight .small {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .expertise-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(94, 234, 212, 0.3);
+        }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: rgba(94,234,212,0.08);
+            color: var(--accent);
+            font-family: monospace;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .expertise-card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .expertise-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 850px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            bottom: 10px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 45px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 3px;
+            top: 9px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 15px rgba(94,234,212,0.5);
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--card);
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: rgba(96,165,250,0.35);
+        }
+
+        .project-image {
+            height: 210px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(94,234,212,0.12),
+                    rgba(96,165,250,0.08)
+                );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-placeholder {
+            color: var(--muted);
+            font-family: monospace;
+            font-size: 13px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .project-content {
+            padding: 28px;
+        }
+
+        .project-label {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .project h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--accent-blue);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.025);
+            color: #c9d3e1;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .tech:hover {
+            border-color: rgba(94,234,212,0.35);
+            color: var(--accent);
+        }
+
+        .philosophy {
+            max-width: 850px;
+        }
+
+        .philosophy p {
+            color: var(--muted);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .philosophy .big {
+            font-size: clamp(26px, 4vw, 40px);
+            line-height: 1.35;
+            color: var(--text);
+            font-weight: 600;
+            letter-spacing: -1px;
+            margin-bottom: 35px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .footer-accent {
+            color: var(--accent);
+        }
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .projects,
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 90px 0;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+            am<span>.</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#journey">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#stack">Stack</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<header class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Data Engineer · DevOps · AI
+            </div>
+
+            <h1>
+                I build systems<br>
+                that turn
+                <span class="gradient-text">
+                    data into action.
+                </span>
+            </h1>
+
+            <p class="hero-description">
+                I'm <strong>Albert Majchers</strong>, a Data Engineer with 10 years of
+                experience in technology. My journey started with SEO and
+                web development and gradually evolved into
+                <strong>Data Engineering, Cloud, DevOps and AI.</strong>
+            </p>
+
+            <div class="hero-links">
+
+                <a href="#projects" class="button primary">
+                    Explore my projects
+                </a>
+
+                <a href="#about" class="button">
+                    More about me ↓
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                01 / ABOUT
+            </div>
+
+            <h2>
+                From websites to data platforms.
+            </h2>
+
+            <p class="section-intro">
+                A technical journey that moved from building websites
+                to building the infrastructure behind data and AI.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I started my career working with
+                    <strong>SEO, websites and web technologies</strong>.
+                    That experience taught me how applications work from
+                    the ground up, how users interact with them, and how
+                    to build and maintain systems in production.
+                </p>
+
+                <p>
+                    Over time, my interests shifted towards
+                    <strong>data and automation</strong>. I became fascinated
+                    by what happens behind the application layer:
+                    collecting data, transforming it, building reliable
+                    pipelines and making information useful.
+                </p>
+
+                <p>
+                    Today, my main focus is
+                    <strong>Data Engineering, DevOps and AI</strong>.
+                    I work with modern cloud data platforms, build batch
+                    and streaming pipelines, automate infrastructure and
+                    deployment, and develop AI-powered applications.
+                </p>
+
+                <p>
+                    Outside of my professional work, I like building my own
+                    projects. They are a way for me to experiment with new
+                    technologies, solve real problems and turn ideas into
+                    working software.
+                </p>
+
+            </div>
+
+
+            <aside class="about-highlight">
+
+                <div class="quote">
+                    "I enjoy taking an idea, turning it into a system,
+                    and making that system actually work."
+                </div>
+
+                <div class="small">
+                    Data Engineering · Cloud · Automation · AI
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="expertise">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                02 / WHAT I DO
+            </div>
+
+            <h2>
+                Building the whole pipeline.
+            </h2>
+
+            <p class="section-intro">
+                I enjoy working across the boundaries between data,
+                infrastructure, software and AI.
+            </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+            <article class="expertise-card">
+
+                <div class="icon">
+                    01
+                </div>
+
+                <h3>
+                    Data Engineering
+                </h3>
+
+                <p>
+                    Designing and implementing batch and streaming data
+                    processes, ETL pipelines, lakehouse architectures,
+                    data transformations and reliable data workflows.
+                </p>
+
+            </article>
+
+
+            <article class="expertise-card">
+
+                <div class="icon">
+                    02
+                </div>
+
+                <h3>
+                    Cloud & DevOps
+                </h3>
+
+                <p>
+                    Building CI/CD pipelines, infrastructure as code,
+                    cloud services, private networking and automated
+                    deployment workflows using Azure and modern DevOps tools.
+                </p>
+
+            </article>
+
+
+            <article class="expertise-card">
+
+                <div class="icon">
+                    03
+                </div>
+
+                <h3>
+                    AI & MLOps
+                </h3>
+
+                <p>
+                    Deploying machine learning models, tracking experiments
+                    and metrics, and building AI applications using MLflow,
+                    Databricks, Azure ML and OpenAI technologies.
+                </p>
+
+            </article>
+
+
+            <article class="expertise-card">
+
+                <div class="icon">
+                    04
+                </div>
+
+                <h3>
+                    Software Engineering
+                </h3>
+
+                <p>
+                    Developing Python microservices and APIs, building
+                    automated tests, working with Docker and creating
+                    production-ready applications.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="journey">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                03 / JOURNEY
+            </div>
+
+            <h2>
+                How I got here.
+            </h2>
+
+            <p class="section-intro">
+                My career has gradually moved closer to the systems
+                underneath modern applications.
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Web & SEO
+                </h3>
+
+                <p>
+                    I started with SEO, website creation and maintenance.
+                    This gave me my first experience with web technologies,
+                    hosting and production systems.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Data Engineering
+                </h3>
+
+                <p>
+                    I moved into data engineering and began working with
+                    Python, SQL, Apache Spark and large-scale data processing.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Cloud & DevOps
+                </h3>
+
+                <p>
+                    As systems became more complex, I expanded into Azure,
+                    CI/CD, Docker, infrastructure as code, networking and
+                    automated testing.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    AI & MLOps
+                </h3>
+
+                <p>
+                    More recently, I've been combining my data and software
+                    engineering experience with machine learning and
+                    generative AI.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                04 / PROJECTS
+            </div>
+
+            <h2>
+                Things I've built.
+            </h2>
+
+            <p class="section-intro">
+                Personal projects are where I experiment, learn and
+                turn interesting ideas into working systems.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <img
+                        src="res-whisper-app.png"
+                        alt="RES Whisper application"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-label">
+                        ENERGY / DATA / AI
+                    </div>
+
+                    <h3>
+                        RES Whisper
+                    </h3>
+
+                    <p>
+                        A system designed for users with small renewable
+                        energy installations such as photovoltaic panels
+                        and battery storage.
+                    </p>
+
+                    <p>
+                        The application uses Polish energy-market prices,
+                        battery charging history and weather forecasts to
+                        help determine when energy should be stored and
+                        when it can be sold at a more favorable price.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="http://apps.res-whisper.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visit application →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        AI_GENERATED_CONTENT<br>
+                        LOCAL_LLM → DEEPSEEK
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-label">
+                        GENERATIVE AI
+                    </div>
+
+                    <h3>
+                        RES Whisper AI Blog
+                    </h3>
+
+                    <p>
+                        An energy-focused blog where the content is
+                        generated entirely by an AI model running locally.
+                    </p>
+
+                    <p>
+                        The project is an experiment in using local
+                        language models to create and publish useful,
+                        domain-specific content without relying entirely
+                        on hosted AI services.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="http://res-whisper.com/"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Visit blog →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <img
+                        src="db_kgh.png"
+                        alt="Double Bottom Stack Watcher"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-label">
+                        FINANCE / ML / AUTOMATION
+                    </div>
+
+                    <h3>
+                        Double Bottom Stack Watcher
+                    </h3>
+
+                    <p>
+                        A daily market-analysis project designed to
+                        identify potential double-bottom formations on
+                        the Polish stock market (GPW).
+                    </p>
+
+                    <p>
+                        The system analyzes market data, generates a report
+                        and sends the results by email, making it possible
+                        to monitor potential setups without manually
+                        checking every stock.
+                    </p>
+
+                    <span class="project-link">
+                        Automated daily analysis →
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <article class="project">
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        MORE_PROJECTS<br>
+                        IN_PROGRESS...
+                    </div>
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-label">
+                        EXPERIMENTS
+                    </div>
+
+                    <h3>
+                        More experiments
+                    </h3>
+
+                    <p>
+                        I'm continuously building and experimenting with
+                        data, cloud infrastructure, automation and AI.
+                        Some projects become production applications;
+                        others become useful experiments and learning
+                        experiences.
+                    </p>
+
+                    <span class="project-link">
+                        Always building something →
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="stack">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                05 / TOOLBOX
+            </div>
+
+            <h2>
+                The technologies I work with.
+            </h2>
+
+            <p class="section-intro">
+                A practical stack built around Python, cloud platforms,
+                distributed data processing and automation.
+            </p>
+
+        </div>
+
+
+        <div class="stack">
+
+            <span class="tech">Python</span>
+            <span class="tech">Pandas</span>
+            <span class="tech">NumPy</span>
+            <span class="tech">PySpark</span>
+            <span class="tech">Apache Spark</span>
+
+            <span class="tech">Databricks</span>
+            <span class="tech">Delta Lake</span>
+            <span class="tech">Unity Catalog</span>
+            <span class="tech">Lakehouse</span>
+
+            <span class="tech">Azure</span>
+            <span class="tech">Azure ML</span>
+            <span class="tech">Azure DevOps</span>
+            <span class="tech">GitHub Actions</span>
+
+            <span class="tech">Docker</span>
+            <span class="tech">Linux</span>
+            <span class="tech">Bicep</span>
+            <span class="tech">CI/CD</span>
+
+            <span class="tech">T-SQL</span>
+            <span class="tech">REST API</span>
+            <span class="tech">FastAPI</span>
+            <span class="tech">Flask</span>
+
+            <span class="tech">MLflow</span>
+            <span class="tech">OpenAI</span>
+            <span class="tech">pytest</span>
+            <span class="tech">Scala</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-number">
+                06 / APPROACH
+            </div>
+
+            <h2>
+                How I like to build.
+            </h2>
+
+        </div>
+
+
+        <div class="philosophy">
+
+            <p class="big">
+                Good engineering is not only about writing code.
+                It's about building systems that are reliable,
+                automated and useful.
+            </p>
+
+            <p>
+                I prefer solutions that can be tested, deployed,
+                monitored and maintained rather than prototypes that
+                only work once.
+            </p>
+
+            <p>
+                That's why I care about automation, testing,
+                infrastructure as code and CI/CD just as much as
+                the application itself.
+            </p>
+
+            <p>
+                And when I see an interesting problem, I usually end up
+                building something to explore it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+            <span class="footer-accent">Albert Majcher</span>
+            &nbsp; Data Engineer · DevOps · AI
+        </div>
+
+        <div>
+            Built with curiosity &amp; code.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
